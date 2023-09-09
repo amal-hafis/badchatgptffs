@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="ai.png"/>
+    <title>EdChatbot</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,300">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.1.2/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400&family=Finger+Paint&display=swap">
+  </head>
+<style>
+    * {
+  font-size: 1.3vw;
+  font-family: Calibri, sans-serif;
+}
+
+html {
+  --scrollbarBG: #fff;
+  --thumbBG: #d3dadd;
+}
+
+body {
+  background-image: radial-gradient(circle,rgb(166, 156, 241) , rgb(122, 178, 201),rgb(47, 0, 255) );
+}
+body .card {
+  border-radius: 20px;
+  height: 45vw;
+  width: 30vw;
+  background-color: white;
+  margin-left: 35vw;
+  margin-top: 1vw;
+  box-shadow: 1vw 1vw 10vw 1vw #c1c9f8;
+}
+body .card #header {
+  border-radius: 20px;
+  height: 5vw;
+
+  background: #212aaf;
+  padding: 0vw;
+}
+body .card #header h1 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 2vw;
+  font-family: Calibri, cursive;
+  padding: 1vw;
+}
+
+body .card #message-section {
+  height: 32vw;
+  padding: 0 2.5vw;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+body .card #message-section #bot,
+body .card #message-section #user {
+  position: relative;
+  bottom: 0;
+  min-height: 1.5vw;
+  border: 0.15vw solid #000000;
+  background-color: #a0a0ca93;
+  border-radius: 0px 1.5vw 1.5vw 1.8vw;
+  padding: 1vw;
+  margin: 1vw 0;
+}
+body .card #message-section #user {
+  border: 2px solid #000;
+  border-radius: 1.5vw 0vw 1.5vw 1.8vw;
+  background-color: #e6e5e5;
+  float: right;
+}
+body .card #message-section #user #user-response {
+  color: #000000;
+}
+body .card #message-section .message {
+
+  color: #000000;
+  clear: both;
+  line-height: 1.2vw;
+  font-size: 1.2vw;
+  padding: 8px;
+  position: relative;
+  margin: 8px 0;
+  max-width: 85%;
+  word-wrap: break-word;
+  z-index: 2;
+}
+body .card #input-section {
+  z-index: 1;
+  padding: 0 2.5vw;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  overflow: hidden;
+  height: 6vw;
+  width: 100%;
+}
+body .card #input-section input {
+
+  background-color: rgba(136, 137, 143, 0.438);
+  color: #000;
+  min-width: 0.5vw;
+  outline: none;
+  height: 4vw;
+  width: 26vw;
+  border-radius: 6px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid #000000 0.1vw;
+}
+body .card .send {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  flex: 0 0 auto;
+  margin-left: 1.4vw;
+  margin-right: 0vw;
+  padding: 0;
+  position: relative;
+  outline: none;
+}
+body .card .send .circle {
+  position: relative;
+  width: 4.8vw;
+  height: 4.8vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .card .send .circle i {
+  font-size: 3vw;
+  margin-left: -4vw;
+  margin-top: 0vw;
+}
+h1{
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.pyq{
+  text-decoration:none;
+  border: none;
+  border-radius: 5px;
+  background-color:white;
+  color: black;
+  font: 500;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.pyq a{
+  text-decoration: none;
+  color: #000;
+  
+  font:bold;
+}
+.robot{
+  size: 2px;
+}
+
+</style>
+<body>
+  <div class="card">
+    <div id="header">
+      
+      <h1><button class="pyq"><a href="./imageRecog.html">ImageGPT</a></button><img class="robot" src="ai.png">EdChatbot<button class="pyq">
+        <a href="./ai.html" target="_blank">Educhatbot+</a></button></h1>
+    </div>
+    <div id="message-section">
+      <div class="message" id="bot">
+        <span id="bot-response">Hello.. How may i help u today</span></div>
+    </div>
+    <div id="input-section">
+      <input id="input" type="text" placeholder="  Type to Talk..." onkeydown="IsEnter()" autofocus>
+      
+      <button class="send" onclick="sendMessage()">
+        <div class="circle"><i class="zmdi zmdi-mail-send"></i></div>
+      </button>
+    </div>
+  </div>
+
+<script src="./script.js"></script>
+
+
+</body>
+</html>
