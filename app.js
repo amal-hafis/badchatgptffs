@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer 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`
+                "Authorization": `Bearer sk-0rCE8WrtInqOUih9UN2JT3BlbkF__urAPIkey___Jrjycii0Z2BNAcz`
             },
             body: JSON.stringify({
                 model: "text-davinci-003",
